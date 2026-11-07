@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- App Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_launcher"
+                android:contentDescription="@string/app_name" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Charge Alert"
+                    android:textColor="@color/text_main"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Battery Health &amp; Charging Guard"
+                    android:textColor="@color/accent_blue"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Battery Status Card -->
+        <LinearLayout
+            android:id="@+id/card_battery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIVE BATTERY STATUS"
+                android:textColor="@color/text_muted"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_battery_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--%"
+                android:textColor="@color/accent"
+                android:textSize="44sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tv_charging_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Checking status..."
+                android:textColor="@color/text_main"
+                android:textSize="15sp"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/tv_battery_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Source: -- | Health: -- | Temp: --"
+                android:textColor="@color/text_muted"
+                android:textSize="12sp"
+                android:layout_marginTop="6dp" />
+        </LinearLayout>
+
+        <!-- Service Control Button -->
+        <Button
+            android:id="@+id/btn_toggle_service"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="START MONITORING"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@color/accent"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Thresholds Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ALERT THRESHOLDS"
+                android:textColor="@color/text_muted"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select charge levels when alarm chimes:"
+                android:textColor="@color/text_main"
+                android:textSize="13sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp" />
+
+            <CheckBox
+                android:id="@+id/cb_70"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="70% - Early Alert"
+                android:textColor="@color/text_main" />
+
+            <CheckBox
+                android:id="@+id/cb_75"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="75% - Moderate Charge"
+                android:textColor="@color/text_main" />
+
+            <CheckBox
+                android:id="@+id/cb_80"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="80% - Recommended (Optimal Lifespan)"
+                android:textColor="@color/accent"
+                android:textStyle="bold"
+                android:checked="true" />
+
+            <CheckBox
+                android:id="@+id/cb_85"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="85% - Protect Battery Standard"
+                android:textColor="@color/text_main" />
+
+            <CheckBox
+                android:id="@+id/cb_90"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="90% - High Capacity"
+                android:textColor="@color/text_main" />
+
+            <CheckBox
+                android:id="@+id/cb_95"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="95% - Near Full"
+                android:textColor="@color/text_main" />
+
+            <CheckBox
+                android:id="@+id/cb_100"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100% - Fully Charged"
+                android:textColor="@color/text_main"
+                android:checked="true" />
+        </LinearLayout>
+
+        <!-- Options Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ALERT OPTIONS"
+                android:textColor="@color/text_muted"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/cb_sound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Play Alarm Chime"
+                android:textColor="@color/text_main"
+                android:checked="true"
+                android:layout_marginTop="6dp" />
+
+            <CheckBox
+                android:id="@+id/cb_vibrate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vibrate Phone"
+                android:textColor="@color/text_main"
+                android:checked="true" />
+
+            <CheckBox
+                android:id="@+id/cb_repeat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Continuous Chime until unplugged / dismissed"
+                android:textColor="@color/text_main"
+                android:checked="true" />
+
+            <CheckBox
+                android:id="@+id/cb_boot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Auto-start monitoring on phone restart"
+                android:textColor="@color/text_main"
+                android:checked="true" />
+        </LinearLayout>
+
+        <!-- Quick Actions -->
+        <Button
+            android:id="@+id/btn_test_alert"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Test Alert Chime Now"
+            android:textColor="@color/text_main"
+            android:background="@color/card_border"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/btn_battery_optim"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Set Battery Usage to 'Unrestricted'"
+            android:textColor="@color/accent_blue"
+            android:background="@color/card_border"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Charge Alert v1.0.0 • Open Source"
+            android:textColor="@color/text_muted"
+            android:textSize="11sp"
+            android:layout_marginBottom="16dp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,7 @@
+{
+  "name": "Charge Alert - Android APK & Battery Monitor",
+  "description": "Download the ready-to-install Charge Alert Android APK, test real-time charging thresholds, and monitor battery health with customizable alert chimes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
